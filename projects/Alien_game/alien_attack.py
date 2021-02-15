@@ -1,4 +1,4 @@
-import pygame
+import pgzero
 import time
 import random
 
@@ -9,14 +9,15 @@ alien = Actor('alien', center=(100,100))
 WIDTH = 1000
 HEIGHT = 500
 
+
 def draw():
-    
     screen.clear()
     screen.blit('space_back', (0,0))
     ship.draw()
     rocket_fire.draw()
     alien.draw()
-    
+
+
 def move_alien(alien):   
     alien.right += 1
     if alien.left > WIDTH:
@@ -41,12 +42,9 @@ def move_rocket(ship):
     elif keyboard.space:
         animate(rocket_fire, pos =(0, 0))
         screen.clear()
-    
+
+
 def update():
     move_alien(alien)
     move_rocket(ship)
     draw()
-
-    
-        
-   
